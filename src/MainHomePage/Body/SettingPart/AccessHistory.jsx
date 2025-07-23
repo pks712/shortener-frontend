@@ -14,7 +14,7 @@ const handleDeleteAccount = async () => {
   try {
     
 
-    await axios.delete("http://localhost:8080/api/user/delete-account", {
+    await axios.delete("https://shortener-backend-4w6z.onrender.com/api/user/delete-account", {
       withCredentials: true 
     });
 

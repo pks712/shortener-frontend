@@ -23,7 +23,7 @@ const EditPage = ({ onClose,  urlData ,onUpdate }) => {
       }
 
       const res = await axios.patch(
-         `http://localhost:8080/api/user/short-url/${ urlData.shortId}`,
+         `https://shortener-backend-4w6z.onrender.com/api/user/short-url/${ urlData.shortId}`,
         { newShortId },
         { withCredentials: true }
       );

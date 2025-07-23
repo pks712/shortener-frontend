@@ -23,7 +23,7 @@ const NotificationPage = ({onClose}) => {
   //  Fetch notifications from server
   const fetchNotifications = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/geturl`);
+      const res = await axios.get(`https://shortener-backend-4w6z.onrender.com/api/geturl`);
       return res.data;
     } catch (err) {
       console.error("Error fetching stats", err);
