@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button'
 import BodyRightSidebar from '../BodyRightSidebar/BodyRightSidebar';
-import { useTheme } from '../BodyRightSideBar/useThemeContext';
+import { useTheme } from '../BodyRightSidebar/useThemeContext.jsx';
 import InputUrlCom from './InputUrlCom';
 import { motion } from "framer-motion";
 import MainBody from '../../../MainHomePage/Body/MainBody/MainBody';
