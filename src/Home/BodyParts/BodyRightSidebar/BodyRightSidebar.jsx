@@ -2,7 +2,7 @@ import Button from '@mui/material/Button'
 import React, { useEffect, useState } from 'react';
 import { CiLight } from "react-icons/ci";
 import { CiDark } from "react-icons/ci";
-import { useTheme } from './useThemeContext';
+import { useTheme } from './useThemeContext.jsx';
 import {motion} from "framer-motion"
 const BodyRightSidebar = () => {
   const{theme , toggleTheme} = useTheme();
