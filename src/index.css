@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.bodyheader {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  body {
+    width: fit-content;
+    margin: 0px;
+    padding: 0px;
+  }
+ 
+}
+
+@media (max-width:900px){
+   .SideBar{
+    display: none;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1055px) {
+  .mainlayout {
+    width: 1100px;
+  }
+}
+
+
+               
+
+body{
+  background-color: black;
+  color:white;
+
+
+}
+
+
+
+
+
+.Mui-checked{
+  color: blue !important;
+}
+
+/* index.css या App.css में */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #2c11da; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #ec4899; 
+  border-radius: 10px;
+  border: 2px solid #1f2937; 
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #8d0499; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(111, 99, 99); 
+  border-radius: 5px;
+  border: 2px solid #1f2937; 
+min-height: 3px;
+}
