@@ -12,7 +12,7 @@ const StatsPage = () => {
   
   const fetchStats = async () => {
     try {
-      const res = await axios.get(`https://shortener-backend-tmnq.onrender.com/api/geturl`);
+      const res = await axios.get(`https://shortener-backend-qzvt.onrender.com/api/geturl`);
       return res.data;
     } catch (err) {
       console.error("Error fetching stats", err);
@@ -26,7 +26,7 @@ const { data: urls, isLoading } = useQuery({
 });
 
 const fetchDailyClicks = async () => {
-  const res = await axios.get("https://shortener-backend-tmnq.onrender.com/api/analytics");
+  const res = await axios.get("https://shortener-backend-qzvt.onrender.com/api/analytics");
   return res.data;
 };
 
@@ -39,7 +39,7 @@ const { data: analyticsData , isLoading: isAnalyticsLoading} = useQuery({
 });
 
 const fetchReferrerStats = async () => {
-  const res = await axios.get("https://shortener-backend-tmnq.onrender.com/api/referre");
+  const res = await axios.get("https://shortener-backend-qzvt.onrender.com/api/referre");
   return res.data;
 };
 
@@ -51,7 +51,7 @@ const { data: referrerData, isLoading: isReferreerLoading } = useQuery({
 
 
 const fetchAnalytics = async () => {
-  const res = await axios.get("https://shortener-backend-tmnq.onrender.com/api/browser");
+  const res = await axios.get("https://shortener-backend-qzvt.onrender.com/api/browser");
   return res.data;
 };
 
@@ -65,7 +65,7 @@ const browsers = analyticsDataofBrowser?.browsers || {};
 
 
 const fetchCountryStats = async () => {
-  const res = await axios.get("https://shortener-backend-tmnq.onrender.com/api/country");
+  const res = await axios.get("https://shortener-backend-qzvt.onrender.com/api/country");
   return res.data;
 };
 

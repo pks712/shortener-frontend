@@ -4,7 +4,7 @@ import axios from "axios";
 
 const useAllUrls = () => {
   const fetchStats = async () => {
-    const res = await axios.get("https://shortener-backend-tmnq.onrender.com/api/geturl");
+    const res = await axios.get("https://shortener-backend-qzvt.onrender.com/api/geturl");
     return res.data;
   };
 

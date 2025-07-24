@@ -40,7 +40,7 @@ const [password, setPassword] = useState("");
   const handleRegisterData = async(e) => {
   e.preventDefault();
     try {
-      const res = await axios.post("https://shortener-backend-tmnq.onrender.com/api/user/register", {
+      const res = await axios.post("https://shortener-backend-qzvt.onrender.com/api/user/register", {
    name,
     email,
     password
