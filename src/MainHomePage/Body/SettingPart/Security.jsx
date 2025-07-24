@@ -18,7 +18,7 @@ const handleChangePassword = async () => {
     }
 
     try {
-      const res = await axios.put("https://shortener-backend-4w6z.onrender.com/api/user/change-password", {
+      const res = await axios.put("https://shortener-backend-tmnq.onrender.com/api/user/change-password", {
         currentPassword,
         newPassword
       }, {

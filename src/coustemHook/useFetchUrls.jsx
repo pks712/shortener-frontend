@@ -10,7 +10,7 @@ const useFetchUrls = () => {
   useEffect(() => {
     const fetchUrls = async () => {
       try {
-        const res = await axios.get("https://shortener-backend-4w6z.onrender.com/api/geturl");
+        const res = await axios.get("https://shortener-backend-tmnq.onrender.com/api/geturl");
         setAllUrls(res.data);  
       } catch (err) {
         console.error("Error fetching URLs:", err);

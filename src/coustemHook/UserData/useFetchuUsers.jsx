@@ -8,7 +8,7 @@ const useAuth = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("https://shortener-backend-4w6z.onrender.com/api/user/getuser", {
+        const res = await axios.get("https://shortener-backend-tmnq.onrender.com/api/user/getuser", {
           withCredentials: true,
         });
         setUser(res.data.user);

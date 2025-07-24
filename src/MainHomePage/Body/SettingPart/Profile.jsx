@@ -29,7 +29,7 @@ const Profile = () => {
       return;
     }
 
-    const res = await fetch("https://shortener-backend-4w6z.onrender.com/api/user/update-profile", {
+    const res = await fetch("https://shortener-backend-tmnq.onrender.com/api/user/update-profile", {
       method: "PATCH",
       credentials: "include", // important for cookies
       headers: {

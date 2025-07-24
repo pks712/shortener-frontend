@@ -23,7 +23,7 @@ const handleLogout = async () => {
   try {
 
 
-    await axios.get("https://shortener-backend-4w6z.onrender.com/api/user/logout", {
+    await axios.get("https://shortener-backend-tmnq.onrender.com/api/user/logout", {
      withCredentials: true 
     });
 

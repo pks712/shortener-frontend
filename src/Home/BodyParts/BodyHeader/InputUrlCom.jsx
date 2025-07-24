@@ -45,7 +45,7 @@ const InputUrlCom = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:8080/api/shorturl", {
+      const res = await axios.post("https://shortener-backend-tmnq.onrender.com/api/shorturl", {
         originalUrl,
       });
 

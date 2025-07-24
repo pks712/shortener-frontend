@@ -8,7 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 const DeletePage = ({ onClose, urlData, onDelete }) => {
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`https://shortener-backend-4w6z.onrender.com/api/user/shorturl-delete/${urlData.shortId}`);
+      const res = await axios.delete(`https://shortener-backend-tmnq.onrender.com/api/user/shorturl-delete/${urlData.shortId}`);
       if (res.status === 200) {
         toast.success("Deleted successfully");
         onDelete(urlData._id);   // ✅ table से हटाओ
