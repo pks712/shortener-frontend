@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 import Logo from '../Home/Header/Logo'
 import { IoClose } from 'react-icons/io5'
 import axios from 'axios'
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 const Register = () => {
   const [openRegister, setOpenRegister] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
@@ -58,6 +58,8 @@ const [password, setPassword] = useState("");
 
 
   return (
+    <>
+    <ToastContainer/>
     <div className="fixed inset-0 z-[9999] bg-black/40 backdrop-blur flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, scale: 0, rotate: 0 }}
@@ -140,6 +142,7 @@ const [password, setPassword] = useState("");
         </form>
       </motion.div>
     </div>
+    </>
   )
 }
 
