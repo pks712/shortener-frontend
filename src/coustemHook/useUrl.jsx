@@ -10,7 +10,7 @@ export const UrlProvider = ({ children }) => {
   };
 
   const setAllUrls = (data) => {
-    setUrls(data);  // ये है तुम्हारा setAllUrls!
+    setUrls(data);  
   };
 
   return (

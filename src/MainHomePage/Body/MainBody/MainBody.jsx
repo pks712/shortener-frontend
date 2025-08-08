@@ -8,7 +8,12 @@ import EditPage from "../../../EditDeleteFilterPage/EditPage";
 import DeletePage from "../../../EditDeleteFilterPage/DeletePage";
 import useClipboardCopy from "../../../coustemHook/useClipboardCopy";
 
-const MainBody = ({ OpenFilterPage, urls = [], isLoading, filteredData = [] }) => {
+const MainBody = ({
+  OpenFilterPage,
+  urls = [],
+  isLoading,
+  filteredData = [],
+}) => {
   const [currentTime, setCurrentTime] = useState(Date.now());
   const [openQr, setOpenQr] = useState(false);
   const [openEditPage, setOpenEditPage] = useState(false);
@@ -63,7 +68,11 @@ const MainBody = ({ OpenFilterPage, urls = [], isLoading, filteredData = [] }) =
     data.map((url) => {
       const isVisible = showDetailsRows[url._id];
       const isExpired = new Date(url.expiredAt).getTime() <= currentTime;
-      const status = isExpired ? "Expired" : url.isActive ? "Active" : "Inactive";
+      const status = isExpired
+        ? "Expired"
+        : url.isActive
+        ? "Active"
+        : "Inactive";
 
       return (
         <React.Fragment key={url._id}>
@@ -76,7 +85,7 @@ const MainBody = ({ OpenFilterPage, urls = [], isLoading, filteredData = [] }) =
                   onClick={(e) => {
                     e.preventDefault();
                     setSelectedShortUrl(url.shortUrl);
-                     window.open(url.shortUrl, "_blank");
+                    window.open(url.shortUrl, "_blank", "noopener,noreferrer");
                   }}
                 >
                   {url.shortUrl}
@@ -92,7 +101,9 @@ const MainBody = ({ OpenFilterPage, urls = [], isLoading, filteredData = [] }) =
                 />
               </div>
               <button
-                className={`text-white bg-gray-600 rounded-full w-7 h-7 flex justify-center items-center hover:bg-pink-500 md:hidden ${user ? "absolute top-2 right-4" : "ml-2"}`}
+                className={`text-white bg-gray-600 rounded-full w-7 h-7 flex justify-center items-center hover:bg-pink-500 md:hidden ${
+                  user ? "absolute top-2 right-4" : "ml-2"
+                }`}
                 onClick={() => toggleDetails(url._id)}
               >
                 {isVisible ? "−" : "+"}
@@ -100,7 +111,9 @@ const MainBody = ({ OpenFilterPage, urls = [], isLoading, filteredData = [] }) =
             </td>
 
             <td className="hidden md:table-cell px-4 py-2 truncate max-w-[200px]">
-              <a href={url.originalUrl} target="_blank" rel="noreferrer">{url.originalUrl}</a>
+              <a href={url.originalUrl} target="_blank" rel="noreferrer">
+                {url.originalUrl}
+              </a>
             </td>
             <td className="hidden md:table-cell px-4 py-2">
               <span
@@ -114,7 +127,11 @@ const MainBody = ({ OpenFilterPage, urls = [], isLoading, filteredData = [] }) =
               </span>
             </td>
             <td className="hidden md:table-cell px-4 py-2">{url.clicks}</td>
-            <td className={`hidden md:table-cell px-4 py-2 font-semibold ${isExpired ? "text-red-700" : "text-green-600"}`}>
+            <td
+              className={`hidden md:table-cell px-4 py-2 font-semibold ${
+                isExpired ? "text-red-700" : "text-green-600"
+              }`}
+            >
               {status}
             </td>
             <td className="hidden md:table-cell px-4 py-2">
@@ -148,8 +165,13 @@ const MainBody = ({ OpenFilterPage, urls = [], isLoading, filteredData = [] }) =
 
           {isVisible && (
             <tr className="md:hidden">
-              <td colSpan="7" className="px-4 py-2 text-sm text-white bg-gray-800 rounded-b-lg">
-                <div><strong>Original:</strong> {url.originalUrl}</div>
+              <td
+                colSpan="7"
+                className="px-4 py-2 text-sm text-white bg-gray-800 rounded-b-lg"
+              >
+                <div>
+                  <strong>Original:</strong> {url.originalUrl}
+                </div>
                 <hr className="mt-1 mb-1" />
                 <div>
                   <strong>QR:</strong>
@@ -164,14 +186,26 @@ const MainBody = ({ OpenFilterPage, urls = [], isLoading, filteredData = [] }) =
                   </span>
                 </div>
                 <hr className="mt-1 mb-1" />
-                <div><strong>Clicks:</strong> {url.clicks}</div>
+                <div>
+                  <strong>Clicks:</strong> {url.clicks}
+                </div>
                 <hr className="mt-1 mb-1" />
                 <div>
                   <strong>Status:</strong>
-                  <span className={`${isExpired ? "text-red-700" : "text-green-600"}`}>  {status}</span>
+                  <span
+                    className={`${
+                      isExpired ? "text-red-700" : "text-green-600"
+                    }`}
+                  >
+                    {" "}
+                    {status}
+                  </span>
                 </div>
                 <hr className="mt-1 mb-1" />
-                <div><strong>Date:</strong> {new Date(url.createdAt).toLocaleDateString()}</div>
+                <div>
+                  <strong>Date:</strong>{" "}
+                  {new Date(url.createdAt).toLocaleDateString()}
+                </div>
                 <hr className="mt-1 mb-1" />
                 {user && (
                   <div className="mt-2 flex gap-5 whitespace-nowrap">
@@ -210,12 +244,16 @@ const MainBody = ({ OpenFilterPage, urls = [], isLoading, filteredData = [] }) =
             <thead className="text-xs uppercase bg-gray-900 font-semibold">
               <tr className="border-none">
                 <th className="px-4 py-3">Short Link</th>
-                <th className="hidden md:table-cell px-4 py-3">Original Link</th>
+                <th className="hidden md:table-cell px-4 py-3">
+                  Original Link
+                </th>
                 <th className="hidden md:table-cell px-4 py-3">QR Code</th>
                 <th className="hidden md:table-cell px-4 py-3">Clicks</th>
                 <th className="hidden md:table-cell px-4 py-3">Status</th>
                 <th className="hidden md:table-cell px-4 py-3">Date</th>
-                {user && <th className="hidden md:table-cell px-4 py-3">Action</th>}
+                {user && (
+                  <th className="hidden md:table-cell px-4 py-3">Action</th>
+                )}
               </tr>
             </thead>
             <tbody className="bg-[rgba(43,47,60,0.3)]">
@@ -225,7 +263,10 @@ const MainBody = ({ OpenFilterPage, urls = [], isLoading, filteredData = [] }) =
 
           <AnimatePresence>
             {openQr && (
-              <Qrpage onClose={() => setOpenQr(false)} shortUrl={selectedShortUrl} />
+              <Qrpage
+                onClose={() => setOpenQr(false)}
+                shortUrl={selectedShortUrl}
+              />
             )}
             {openEditPage && selectedEditUrl && (
               <EditPage
